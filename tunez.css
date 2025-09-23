@@ -1,99 +1,91 @@
-/* ================================
+/* ===================
    ESTILOS GENERALES
-================================== */
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #fce4ec, #f8bbd0); /* fondo suave */
+=================== */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* ================================
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #e30613, #ffffff, #008000); /* Colores de Túnez */
+    color: #222;
+    padding: 1rem;
+}
+
+/* ===================
    HEADER
-================================== */
+=================== */
 header {
-    background-color: #b71c1c; /* rojo bandera Túnez */
-    color: white;
+    background: #e30613; /* Rojo bandera Túnez */
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    font-size: 28px;
+    padding: 1.5rem;
+    border-bottom: 4px solid #008000;
 }
 
-/* ================================
-   CONTENEDOR
-================================== */
-.padre {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    overflow-x: auto; /* para scroll en pantallas pequeñas */
+header h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
-/* ================================
+/* ===================
    TABLA
-================================== */
-table {
-    border-collapse: collapse;
+=================== */
+.padre {
     width: 100%;
-    max-width: 1200px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+table {
+    width: 100%;   /* ✅ siempre ocupa todo el ancho */
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    table-layout: fixed; /* ✅ mantiene proporciones */
 }
 
 th, td {
-    border: 1px solid #444;
-    padding: 12px;
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
     vertical-align: middle;
+    word-wrap: break-word; /* ✅ evita desbordes */
 }
 
-/* Encabezados */
 th {
-    background-color: #d32f2f; /* tono más vivo de rojo */
-    color: white;
-    font-size: 18px;
+    background: #e30613;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-/* Imágenes */
+td {
+    font-size: 0.95rem;
+}
+
+/* ===================
+   IMÁGENES
+=================== */
 td img {
-    width: 120px;
+    max-width: 100%;   /* ✅ ocupa el ancho de la celda */
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* ================================
-   RESPONSIVE
-================================== */
-
-/* Tablets */
-@media (max-width: 900px) {
-    table {
-        font-size: 14px;
-    }
-
-    td img {
-        width: 90px;
-    }
+td img:hover {
+    transform: scale(1.05);
 }
 
-/* Móviles */
-@media (max-width: 600px) {
-    header {
-        font-size: 22px;
-        padding: 15px;
-    }
-
-    table, th, td {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    td img {
-        width: 70px;
-    }
-}
-a {
-    text-decoration: none;   /* quita el subrayado */
-    color: inherit;          /* hereda el color del padre */
+/* ===================
+   TEXTO
+=================== */
+td p {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
