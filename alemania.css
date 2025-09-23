@@ -1,120 +1,91 @@
-/* ================================
+/* ===================
    ESTILOS GENERALES
-================================== */
-body {
-    font-family: Arial, Helvetica, sans-serif;
+=================== */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    box-sizing: border-box;
 }
 
-/* ================================
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, black, red, yellow); /* Colores de Alemania */
+    color: #222;
+    padding: 1rem;
+}
+
+/* ===================
    HEADER
-================================== */
+=================== */
 header {
     background: black;
-    color: white;
+    color: yellow;
     text-align: center;
-    padding: 18px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 0 0 12px 12px;
+    padding: 1.5rem;
+    border-bottom: 4px solid red;
 }
 
-/* ================================
-   CONTENEDOR TABLA
-================================== */
-.padre {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+header h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
-/* ================================
+/* ===================
    TABLA
-================================== */
-table {
+=================== */
+.padre {
     width: 100%;
-    max-width: 1100px;
+}
+
+table {
+    width: 100%;  /* ✅ Siempre ocupa todo el ancho */
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    table-layout: fixed; /* ✅ Mantiene proporciones */
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     padding: 12px;
     text-align: center;
     vertical-align: middle;
-    font-size: 15px;
-    word-wrap: break-word;
+    word-wrap: break-word; /* ✅ Evita que se rompa en móvil */
 }
 
-/* Encabezados */
 th {
     background: red;
     color: white;
-    font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 1rem;
 }
 
-/* Filas alternadas */
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+td {
+    font-size: 0.95rem;
 }
 
-/* ================================
+/* ===================
    IMÁGENES
-================================== */
-img {
-    width: 70px;
+=================== */
+td img {
+    max-width: 100%;   /* ✅ Se adapta a cualquier pantalla */
     height: auto;
     border-radius: 8px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
-img:hover {
-    transform: scale(1.1);
+td img:hover {
+    transform: scale(1.05);
 }
 
-/* ================================
-   RESPONSIVE
-================================== */
-@media (max-width: 768px) {
-    header {
-        font-size: 18px;
-        padding: 15px;
-    }
-
-    th, td {
-        font-size: 13px;
-        padding: 8px;
-    }
-
-    img {
-        width: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    th, td {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    img {
-        width: 50px;
-    }
-}
-a {
-    text-decoration: none;   /* quita el subrayado */
-    color: inherit;          /* hereda el color del padre */
+/* ===================
+   TEXTO
+=================== */
+td p {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
