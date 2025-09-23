@@ -1,109 +1,90 @@
-/* ================================
+/* ===================
    ESTILOS GENERALES
-================================== */
-body {
-    font-family: Arial, Helvetica, sans-serif;
+=================== */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    box-sizing: border-box;
 }
 
-/* ================================
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #55c2ff, #ffffff, #55c2ff); /* Colores Uruguay */
+    color: #222;
+    padding: 1rem;
+}
+
+/* ===================
    HEADER
-================================== */
+=================== */
 header {
-    background: linear-gradient(to right, #2abae6, #04afc5); /* degradado rojo → verde */
-    color: white;
+    background: #003366; /* Azul bandera Uruguay */
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    font-size: clamp(18px, 2vw, 26px); /* se adapta pero mantiene elegancia */
-    font-weight: bold;
-    border-radius: 0 0 12px 12px;
+    padding: 1.5rem;
+    border-bottom: 4px solid #55c2ff;
 }
 
-/* ================================
-   CONTENEDOR TABLA
-================================== */
-.padre {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
+header h1 {
+    font-size: 2rem;
 }
 
-/* ================================
+/* ===================
    TABLA
-================================== */
-table {
+=================== */
+.padre {
     width: 100%;
-    max-width: 1000px; /* no crece demasiado en pantallas grandes */
+}
+
+table {
+    width: 100%;   /* ✅ siempre ocupa todo el ancho */
     border-collapse: collapse;
-    background-color: white;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    table-layout: fixed; /* ✅ columnas proporcionadas */
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
     vertical-align: middle;
-    word-wrap: break-word;
+    word-wrap: break-word; /* ✅ evita que se rompa el texto */
 }
 
-/* Encabezados */
 th {
-    background: #025f66;
-    color: white;
-    font-size: 16px;
+    background: #55c2ff;
+    color: #003366;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
-/* Filas alternadas */
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+td {
+    font-size: 0.95rem;
 }
 
-/* ================================
+/* ===================
    IMÁGENES
-================================== */
-img {
-    width: 80px;
+=================== */
+td img {
+    max-width: 100%;   /* ✅ se adapta al tamaño de la celda */
     height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-img:hover {
-    transform: scale(1.1);
+td img:hover {
+    transform: scale(1.05);
 }
 
-/* ================================
-   RESPONSIVE
-================================== */
-@media (max-width: 768px) {
-    table {
-        font-size: 14px;
-    }
-
-    img {
-        width: 60px;
-    }
-}
-
-@media (max-width: 480px) {
-    table {
-        font-size: 12px;
-    }
-
-    th, td {
-        padding: 8px;
-    }
-
-    img {
-        width: 50px;
-    }
-}
-a {
-    text-decoration: none;   /* quita el subrayado */
-    color: inherit;          /* hereda el color del padre */
+/* ===================
+   TEXTO
+=================== */
+td p {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
